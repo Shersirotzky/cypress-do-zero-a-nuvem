@@ -3,10 +3,12 @@
 
 describe('Central de Atendimento ao Cliente TAT', () => {
   beforeEach(() => {
-    // cy.viewport('iphone-xr');
+     // cy.viewport('iphone-xr'); //muda a resolução da tela para iphone-xr//
     cy.visit('./src/index.html');
-  });
 
+  });
+   
+    
   it('verifica o título da aplicação', () => {
     cy.title().should('eq', 'Central de Atendimento ao Cliente TAT');
       
@@ -64,26 +66,17 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('#phone-checkbox').uncheck()
         .should('not.be.checked');
   });
-   it('envia um arquivo', () => { //envia um arquivo para o campo de upload//
+   it.only('envia um arquivo', () => { //envia um arquivo para o campo de upload//
     
     cy.get('#file-upload')
-    .selectfile('cypress/fixtures/exemple.json')
-    .should(input => {
-      expect(input[0].files[0].name).to.eq('exemple.json');
+      .selectFile('cypress/fixtures/example.json')
+      .should(input => {
+        expect(input[0].files[0].name).to.equal('example.json');
     });
 
   });
-    //  it('envia um arquivo usnado alias', () => { //usando alias para o arquivo//
-    
-    //   cy.fixtures('exemple.json').as('sampleFile');
-    //   cy.get('#file-upload')
-    //   .selectfile('@sampleFile')
-    //   .should(input => {
-    //     expect(input[0].files[0].name).to.eq('exemple.json');
-    //   });
-   
 
-  });
+    
 
   it('verifica a politica de privacidade e abre em outra aba', () => { //verifica a politica de privacidade e abre em outra aba//
     
