@@ -66,7 +66,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('#phone-checkbox').uncheck()
         .should('not.be.checked');
   });
-   it.only('envia um arquivo', () => { //envia um arquivo para o campo de upload//
+   it('envia um arquivo', () => { //envia um arquivo para o campo de upload//
     
     cy.get('#file-upload')
       .selectFile('cypress/fixtures/example.json')

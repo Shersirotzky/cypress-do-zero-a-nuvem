@@ -27,5 +27,8 @@
   "homepage": "https://github.com/wlsf82/cypress-do-zero-a-nuvem#readme",
   "dependencies": {
     "cypress-do-zero-a-nuvem": "file:"
+  },
+  "devDependencies": {
+    "cypress": "^13.12.0"
   }
 }
